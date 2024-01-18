@@ -1,15 +1,52 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.*;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 66, 77, 33, 8, 2, 7));
+        changeList(nums);
+        Set<Integer> nums2 = new HashSet<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 66, 77, 33, 8, 2, 7));
+        System.out.println();
+        System.out.println(nums2);
+
+        List<String> strings = new ArrayList<>(List.of("один", "два", "два", "три", "три", "три", "gg", "gg"));
+        stringOfList(strings);
+
     }
+
+
+    public static void changeList(List<Integer> list){
+        for(int i = 0;i<list.size();i++){
+            if(list.get(i)%2!=0){
+                System.out.print(list.get(i)+",");
+
+            }
+
+        }
+        System.out.println();
+
+    }
+    public  static  void stringOfList(List<String> list){
+        Set<String> set=new HashSet<>();
+        Set<Integer>set2=new HashSet<>();
+        int i=0;
+        for(String str:list){
+            i=0;
+            for (String str2:list){
+                if(str==str2){
+                    set.add(str);
+                }
+                if(str.equals(str2)){
+                    i++;
+                }
+            }
+            System.out.println(i);
+
+        }
+        System.out.println(set);
+    }
+
+
+
 }
